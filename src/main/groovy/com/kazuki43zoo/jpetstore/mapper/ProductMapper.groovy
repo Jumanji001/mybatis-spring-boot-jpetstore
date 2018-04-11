@@ -35,7 +35,7 @@ interface ProductMapper {
             DESCN as description,
             CATEGORY as categoryId
         FROM
-            PRODUCT
+            product
         WHERE
             CATEGORY = #{categoryId}
     ''')
@@ -48,7 +48,7 @@ interface ProductMapper {
             DESCN as description,
             CATEGORY as categoryId
         FROM
-            PRODUCT
+            product
         WHERE
             PRODUCTID = #{productId}
     ''')
@@ -61,7 +61,7 @@ interface ProductMapper {
             DESCN as description,
             CATEGORY as categoryId
         FROM
-            PRODUCT
+            product
         WHERE
             LOWER(NAME) LIKE '%' || #{keyword} || '%'
     ''')

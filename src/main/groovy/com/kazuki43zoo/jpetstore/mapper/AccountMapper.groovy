@@ -50,7 +50,7 @@ interface AccountMapper {
             PROFILE.BANNEROPT AS bannerOption,
             BANNERDATA.BANNERNAME
         FROM
-            ACCOUNT, PROFILE, SIGNON, BANNERDATA
+            account, profile, signon, bannerdata
         WHERE
             ACCOUNT.USERID = #{username}
             AND SIGNON.USERNAME = ACCOUNT.USERID

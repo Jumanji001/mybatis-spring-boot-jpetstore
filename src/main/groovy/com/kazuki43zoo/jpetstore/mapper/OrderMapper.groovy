@@ -58,8 +58,8 @@ interface OrderMapper {
             USERID AS username,
             STATUS
         FROM
-            ORDERS,
-            ORDERSTATUS
+            orders,
+            orderstatus
         WHERE
             ORDERS.USERID = #{username}
             AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
@@ -97,7 +97,7 @@ interface OrderMapper {
             USERID AS username,
             STATUS
         FROM
-            ORDERS, ORDERSTATUS
+            orders, orderstatus
         WHERE
             ORDERS.ORDERID = #{orderId}
             AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
@@ -188,7 +188,7 @@ interface OrderMapper {
             QUANTITY,
             UNITPRICE
         FROM
-            ORDERLINES
+            orderlines
         WHERE
             ORDERID = #{orderId}
     ''')

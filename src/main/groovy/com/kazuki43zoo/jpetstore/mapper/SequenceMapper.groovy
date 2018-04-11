@@ -33,7 +33,7 @@ interface SequenceMapper {
             NAME,
             NEXTID
         FROM
-            SEQUENCE
+            sequence
         WHERE
             NAME = #{name}
         FOR UPDATE

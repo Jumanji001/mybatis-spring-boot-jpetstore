@@ -64,7 +64,7 @@ interface ItemMapper {
             ATTR4 AS attribute4,
             ATTR5 AS attribute5
         FROM
-            ITEM I, PRODUCT P
+            item I, product P
         WHERE
             P.PRODUCTID = I.PRODUCTID
             AND I.PRODUCTID = #{productId}
@@ -89,9 +89,9 @@ interface ItemMapper {
             ATTR5 AS attribute5,
             QTY AS quantity
         FROM
-            ITEM I,
-            INVENTORY V,
-            PRODUCT P
+            item I,
+            inventory V,
+            product P
         WHERE
             P.PRODUCTID = I.PRODUCTID
             AND I.ITEMID = V.ITEMID
