@@ -33,7 +33,7 @@ interface CategoryMapper {
             NAME,
             DESCN AS description
         FROM
-            CATEGORY
+            category
         WHERE
             CATID = #{categoryId}
     ''')
