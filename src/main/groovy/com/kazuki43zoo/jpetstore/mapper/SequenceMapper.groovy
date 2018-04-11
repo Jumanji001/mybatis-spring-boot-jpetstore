@@ -41,7 +41,7 @@ interface SequenceMapper {
     Sequence getSequence(String name);
 
     @Update('''
-        UPDATE SEQUENCE SET
+        UPDATE sequence SET
             NEXTID = NEXTID + 1
         WHERE
             NAME = #{name}
