@@ -92,7 +92,7 @@ interface OrderMapper {
             EXPRDATE AS expiryDate,
             LOCALE,
             ORDERDATE,
-            ORDERS.ORDERID,
+            orders.ORDERID,
             TOTALPRICE,
             USERID AS username,
             STATUS
