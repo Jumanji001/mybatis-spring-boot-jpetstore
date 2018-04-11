@@ -31,31 +31,31 @@ interface AccountMapper {
 
     @Select('''
         SELECT
-            SIGNON.USERNAME,
-            SIGNON.PASSWORD,
-            ACCOUNT.EMAIL,
-            ACCOUNT.FIRSTNAME,
-            ACCOUNT.LASTNAME,
-            ACCOUNT.STATUS,
-            ACCOUNT.ADDR1 AS address1,
-            ACCOUNT.ADDR2 AS address2,
-            ACCOUNT.CITY,
-            ACCOUNT.STATE,
-            ACCOUNT.ZIP,
-            ACCOUNT.COUNTRY,
-            ACCOUNT.PHONE,
-            PROFILE.LANGPREF AS languagePreference,
-            PROFILE.FAVCATEGORY AS favouriteCategoryId,
-            PROFILE.MYLISTOPT AS listOption,
-            PROFILE.BANNEROPT AS bannerOption,
-            BANNERDATA.BANNERNAME
+            signon.USERNAME,
+            signon.PASSWORD,
+            account.EMAIL,
+            account.FIRSTNAME,
+            account.LASTNAME,
+            account.STATUS,
+            account.ADDR1 AS address1,
+            account.ADDR2 AS address2,
+            account.CITY,
+            account.STATE,
+            account.ZIP,
+            account.COUNTRY,
+            account.PHONE,
+            profile.LANGPREF AS languagePreference,
+            profile.FAVCATEGORY AS favouriteCategoryId,
+            profile.MYLISTOPT AS listOption,
+            profile.BANNEROPT AS bannerOption,
+            bannerdata.BANNERNAME
         FROM
             account, profile, signon, bannerdata
         WHERE
-            ACCOUNT.USERID = #{username}
-            AND SIGNON.USERNAME = ACCOUNT.USERID
-            AND PROFILE.USERID = ACCOUNT.USERID
-            AND PROFILE.FAVCATEGORY = BANNERDATA.FAVCATEGORY
+            account.USERID = #{username}
+            AND signon.USERNAME = account.USERID
+            AND profile.USERID = account.USERID
+            AND profile.FAVCATEGORY = bannerdata.FAVCATEGORY
     ''')
     Account getAccountByUsername(String username)
 
