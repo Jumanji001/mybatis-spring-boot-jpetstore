@@ -195,7 +195,7 @@ interface OrderMapper {
     List<OrderLine> getOrderLines(int orderId)
 
     @Insert('''
-        INSERT INTO ORDERLINES (
+        INSERT INTO orderlines (
             ORDERID,
             LINENUM,
             ITEMID,

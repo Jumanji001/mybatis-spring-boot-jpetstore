@@ -60,7 +60,7 @@ interface AccountMapper {
     Account getAccountByUsername(String username)
 
     @Insert('''
-        INSERT INTO ACCOUNT (
+        INSERT INTO account (
             EMAIL,
             FIRSTNAME,
             LASTNAME,
@@ -92,7 +92,7 @@ interface AccountMapper {
     void insertAccount(Account account)
 
     @Insert('''
-        INSERT INTO PROFILE (
+        INSERT INTO profile (
             LANGPREF,
             FAVCATEGORY,
             MYLISTOPT,
@@ -110,7 +110,7 @@ interface AccountMapper {
     void insertProfile(Account account)
 
     @Insert('''
-        INSERT INTO SIGNON (
+        INSERT INTO signon (
             PASSWORD,
             USERNAME
         )
@@ -122,7 +122,7 @@ interface AccountMapper {
     void insertSignon(Account account)
 
     @Update('''
-        UPDATE ACCOUNT SET
+        UPDATE account SET
             EMAIL = #{email},
             FIRSTNAME = #{firstName},
             LASTNAME = #{lastName},
@@ -140,7 +140,7 @@ interface AccountMapper {
     void updateAccount(Account account)
 
     @Update('''
-        UPDATE PROFILE SET
+        UPDATE profile SET
             LANGPREF = #{languagePreference},
             FAVCATEGORY = #{favouriteCategoryId},
             MYLISTOPT = #{listOption},
@@ -151,7 +151,7 @@ interface AccountMapper {
     void updateProfile(Account account)
 
     @Update('''
-        UPDATE SIGNON SET
+        UPDATE signon SET
             PASSWORD = #{password}
         WHERE
             USERNAME = #{username}
