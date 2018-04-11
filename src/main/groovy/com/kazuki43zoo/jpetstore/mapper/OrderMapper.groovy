@@ -53,7 +53,7 @@ interface OrderMapper {
             EXPRDATE AS expiryDate,
             LOCALE,
             ORDERDATE,
-            ORDERS.ORDERID,
+            orders.ORDERID,
             TOTALPRICE,
             USERID AS username,
             STATUS
@@ -61,8 +61,8 @@ interface OrderMapper {
             orders,
             orderstatus
         WHERE
-            ORDERS.USERID = #{username}
-            AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
+            orders.USERID = #{username}
+            AND orders.ORDERID = orderstatus.ORDERID
         ORDER BY
             ORDERDATE
     ''')
@@ -99,8 +99,8 @@ interface OrderMapper {
         FROM
             orders, orderstatus
         WHERE
-            ORDERS.ORDERID = #{orderId}
-            AND ORDERS.ORDERID = ORDERSTATUS.ORDERID
+            orders.ORDERID = #{orderId}
+            AND orders.ORDERID = orderstatus.ORDERID
     ''')
     Order getOrder(int orderId)
 
@@ -165,7 +165,7 @@ interface OrderMapper {
     @Insert('''<script>
         <bind name="lineNum" value="_parameter.getLines().size()" />
 
-        INSERT INTO ORDERSTATUS (
+        INSERT INTO orderstatus (
             ORDERID,
             LINENUM,
             TIMESTAMP,
