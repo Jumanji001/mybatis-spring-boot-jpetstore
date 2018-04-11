@@ -30,7 +30,7 @@ import org.apache.ibatis.annotations.Update
 interface ItemMapper {
 
     @Update('''
-        UPDATE INVENTORY SET
+        UPDATE inventory SET
             QTY = QTY - #{increment}
         WHERE
             ITEMID = #{itemId}
@@ -41,7 +41,7 @@ interface ItemMapper {
         SELECT
             QTY AS value
         FROM
-            INVENTORY
+            inventory
         WHERE
             ITEMID = #{itemId}
     ''')
