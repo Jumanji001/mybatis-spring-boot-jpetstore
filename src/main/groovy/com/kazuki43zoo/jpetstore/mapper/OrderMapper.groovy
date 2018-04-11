@@ -105,7 +105,7 @@ interface OrderMapper {
     Order getOrder(int orderId)
 
     @Insert('''
-        INSERT INTO ORDERS (
+        INSERT INTO orders (
             ORDERID,
             USERID,
             ORDERDATE,
