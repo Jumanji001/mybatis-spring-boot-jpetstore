@@ -15,6 +15,7 @@
  */
 package com.kazuki43zoo.jpetstore.component.message;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,7 +25,7 @@ import java.util.function.Consumer;
 /**
  * @author Kazuki Shimizu
  */
-public class Messages implements Iterable<Messages.Message> {
+public class Messages implements Iterable<Messages.Message>, Serializable {
 
 	private final List<Message> values = new ArrayList<>();
 
